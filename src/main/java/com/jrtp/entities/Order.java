@@ -2,6 +2,10 @@ package com.jrtp.entities;
 
 import jakarta.persistence.*;
 import lombok.Data;
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
+
+import java.time.LocalDate;
 
 @Entity
 @Data
@@ -40,5 +44,13 @@ public class Order {
     @ManyToOne
     @JoinColumn(name = "address_id")
     private Address address;
+
+    @CreationTimestamp
+    @Column(name="date_created", updatable = false)
+    private LocalDate dateCreated;
+
+    @UpdateTimestamp
+    @Column(name="last_updated", insertable = false)
+    private LocalDate lastUpdated;
 
 }
