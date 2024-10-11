@@ -1,0 +1,21 @@
+server:
+  port: 8084
+
+spring:
+  application:
+    name: 4-Admin-API
+
+  # Datasource properties
+  datasource:
+    url: jdbc:mysql://localhost:3306/ashokit_ecomm
+    username: root
+    password: root
+
+  # ORM properties
+  jpa:
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+    hibernate:
+      ddl-auto: update
