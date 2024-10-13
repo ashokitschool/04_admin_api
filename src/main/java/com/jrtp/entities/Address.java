@@ -14,5 +14,9 @@ public class Address {
     private String state;
     private String zipCode;
 
+    @ManyToOne
+    @JoinColumn(name = "customer_id")
+    private Customer customer;
+
     // getters and setters
 }
