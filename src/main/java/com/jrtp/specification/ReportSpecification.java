@@ -21,7 +21,7 @@ public class ReportSpecification {
             if (startDate == null) {
                 return criteriaBuilder.conjunction();
             }
-            return criteriaBuilder.greaterThanOrEqualTo(root.get("createdDate"), startDate);
+            return criteriaBuilder.greaterThanOrEqualTo(root.get("dateCreated"), startDate);
         };
     }
 
@@ -30,7 +30,7 @@ public class ReportSpecification {
             if (endDate == null) {
                 return criteriaBuilder.conjunction();
             }
-            return criteriaBuilder.lessThanOrEqualTo(root.get("createdDate"), endDate);
+            return criteriaBuilder.lessThanOrEqualTo(root.get("dateCreated"), endDate);
         };
     }
 }
