@@ -2,8 +2,10 @@ package com.jrtp.controller;
 
 
 import com.jrtp.dto.DashboardDTO;
+import com.jrtp.dto.OrderItemDTO;
 import com.jrtp.dto.ReportDTO;
 import com.jrtp.entities.Order;
+import com.jrtp.entities.OrderItem;
 import com.jrtp.service.DashboardService;
 import com.jrtp.service.ReportService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,4 +36,12 @@ public class AdminController {
     public List<Order> filterOrders(@RequestBody ReportDTO reportDTO) {
         return reportService.filterOrders(reportDTO);
     }
+
+    @GetMapping(value = "/orderItems")
+    public List<OrderItemDTO> fetchOrderItems(@RequestParam Integer orderId) {
+        List<OrderItemDTO> orderItems = reportService.getOrderItems(orderId);
+        return orderItems;
+    }
+
+
 }
