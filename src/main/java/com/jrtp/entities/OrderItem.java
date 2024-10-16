@@ -10,14 +10,12 @@ public class OrderItem {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String productName;
-    private int quantity;
-    private double price;
-
     @ManyToOne
     @JoinColumn(name = "order_id")
     private Order order;
 
-
-    // getters and setters
+    private String imageUrl;
+    private String prodname;
+    private int quantity;
+    private double unitPrice;
 }
